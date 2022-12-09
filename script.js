@@ -43,19 +43,27 @@ gameState.enemies = this.physics.add.group();
 gameState.Bullet = this.physics.add.group();
 
   this.physics.add.collider(gameState.enemies,gameState.player,() => {
-    player.destroy();
         gameState.active = false
     this.physics.pause();
     this.add.text(150,200, 'Game Over Click to Restart',{ fontSize: '25px', fill: '#000'})
     
   })
+
+    this.physics.add.collider(gameState.enemies,gameState.Bullet,() => {
+
+gameState.Bullet.destroy();
+      gameState.enemies.destroy();
+    
+  })
+
+    this.physics.add.collider(gameState.enemies,gameState.Bullet);
   
 }
 function update(){
-
+/tttttttttttt/
 if (Phaser.Input.Keyboard.JustDown(gameState.cursors.space)) {
 
-  gameState.Bullet.create(gameState.player.x+40, gameState.player.y,'Bullet').setVelocityX(200).setScale(.25).setGravityY(0);
+  gameState.Bullet.create(gameState.player.x+40, gameState.player.y,'Bullet').setVelocityX(2500).setScale(.25).setGravityY(0);
 }
   
      if (gameState.cursors.up.isDown){
