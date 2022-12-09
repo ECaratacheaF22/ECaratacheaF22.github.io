@@ -51,8 +51,6 @@ gameState.Bullet = this.physics.add.group();
 
     this.physics.add.collider(gameState.enemies,gameState.Bullet,() => {
 
-gameState.Bullet.destroy();
-      gameState.enemies.destroy();
     
   })
 
