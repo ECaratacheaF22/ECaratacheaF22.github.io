@@ -72,6 +72,7 @@ function create() {
     gameState.BeamsLoop.destroy();
     this.physics.pause();
     this.add.text(150, 200, 'Game Over /n Click to Restart', { fontSize: '25px', fill: '#000' })
+    this.add.text(100, 310, 'Space to Shoot, cursors < > ^ v to move', { fontSize: '25px', fill: '#000' })
 
   })
 
@@ -95,12 +96,14 @@ function create() {
     gameState.active = false
     this.physics.pause();
     this.add.text(150, 200, 'Game Over Click to Restart', { fontSize: '25px', fill: '#000' })
+    this.add.text(150, 310, 'Space to Shoot, cursors < > ^ v to move', { fontSize: '25px', fill: '#000' })
   })
 
   this.physics.add.collider(gameState.Enemies, gameState.player, () => {
     gameState.active = false
     this.physics.pause();
-    this.add.text(150, 200, 'Game Over Click to Restart', { fontSize: '25px', fill: '#000' })
+    this.add.text(100, 200, 'Game Over Click to Restart', { fontSize: '25px', fill: '#000' })
+    this.add.text(100, 310, 'Space to Shoot, cursors < > ^ v to move', { fontSize: '25px', fill: '#000' })
   })
 
   this.physics.add.collider(gameState.Enemies, gameState.Bullets, (enemy, bullet) => {
